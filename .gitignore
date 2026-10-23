@@ -1,0 +1,6 @@
+.chef/
+.vagrant/
+.git/
+*.tar.gz
+*.pem
+*.stackdump

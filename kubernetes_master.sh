@@ -105,6 +105,9 @@ firewall-cmd --permanent --add-port=10250/tcp
 firewall-cmd --permanent --add-port=10257/tcp
 firewall-cmd --permanent --add-port=10259/tcp
 firewall-cmd --permanent --add-port=30000-32767/tcp
+firewall-cmd --permanent --add-port=8472/udp                              # Flannel VXLAN
+firewall-cmd --permanent --zone=trusted --add-source=10.244.0.0/16        # pod network
+firewall-cmd --permanent --zone=public --add-masquerade
 firewall-cmd --reload
 
 echo "[INFO] Writing kubeadm config with long certificate validity..."
